@@ -1,0 +1,1521 @@
+* 00000060
+*! version 1.0.0
+* Do not erase or edit this file
+* It is used by Stata to track the ado and help
+* files you have installed.
+
+S http://www.stata-journal.com/software/sj15-4
+N dm0085.pkg
+D  7 Jan 2020
+U 3
+d SJ15-4 dm0085. A set of utilities for...
+d A set of utilities for managing missing values
+d by Nicholas J. Cox, Department of Geography,
+d      Durham University, Durham City, UK
+d Support:  n.j.cox@@durham.ac.uk
+d After installation, type help ^missings^
+f m\missings.ado
+f m\missings.sthlp
+e
+S http://www.stata-journal.com/software/sj15-4
+N dm89_2.pkg
+D  7 Jan 2020
+U 4
+d SJ15-4 dm89_2. Update: Drop variables...
+d Update: Drop variables (observations) that are
+d   all missing
+d by Nicholas J. Cox, Department of Geography,
+d      Durham University, Durham City, UK
+d Support:  n.j.cox@@durham.ac.uk
+d {cmd:dropmiss} has been superseded by {cmd:missings}.
+d See {cmd:help missings} and
+d Cox (2015, {it:Stata Journal} 15: 1173-1184).
+f d\dropmiss.ado
+f d\dropmiss.hlp
+e
+S http://www.stata-journal.com/software/sj14-2
+N st0085_2.pkg
+D 11 Jan 2020
+U 6
+d SJ14-2 st0085_2. Update: Making regression...
+d Update: Making regression tables from stored
+d   estimates
+d by Ben Jann, University of Bern
+d Support:  jann@@soz.unibe.ch
+d After installation, type help ^estout^,
+d   ^esttab^, ^eststo^, ^estadd^, and ^estpost^
+f _\_eststo.ado
+f _\_eststo.hlp
+f e\esttab.ado
+f e\esttab.hlp
+f e\estadd.ado
+f e\estadd.hlp
+f e\eststo.ado
+f e\eststo.hlp
+f e\estout.ado
+f e\estout.hlp
+f e\estpost.ado
+f e\estpost.hlp
+e
+S http://fmwww.bc.edu/RePEc/bocode/e
+N estwrite.pkg
+D 11 Jan 2020
+U 7
+d 'ESTWRITE': module to store estimation results on disk
+d 
+d   estwrite exports models previously fitted and stored by
+d estimates store to a file on disk. estread is used to reimport
+d the saved estimates. estwrite and estread were previously
+d circulated as eststo and estget.
+d 
+d KW: estimates
+d KW: save
+d KW: model results
+d 
+d Requires: Stata version 8.2
+d 
+d Distribution-Date: 20120709
+d 
+d Author: Ben Jann, University of Bern
+d Support: email jann@@soz.unibe.ch
+d 
+f e\estwrite.ado
+f e\estwrite.hlp
+f e\estread.ado
+f e\estread.hlp
+e
+S http://fmwww.bc.edu/RePEc/bocode/s
+N stripplot.pkg
+D 11 Jan 2020
+U 8
+d 'STRIPPLOT': module for strip plots (one-way dot plots)
+d 
+d      stripplot plots data as a series of marks against a single
+d    magnitude axis, horizontal or vertical. It is an  Stata 8
+d alternative to gr7, oneway or dotplot with more flexibility in
+d   several respects. Its predecessor, onewplot, remains available
+d to   users of Stata 7 or Stata 6 as a separate module.
+d 
+d KW: graphics
+d KW: dot plots
+d KW: oneway plots
+d KW: strip plots
+d KW: onewayplot
+d KW: scatter plot
+d KW: box plot
+d KW: confidence intervals
+d 
+d Requires: Stata version 8.2
+d 
+d 
+d Author: Nicholas J. Cox, Durham University
+d Support: email N.J.Cox@@durham.ac.uk
+d 
+d Distribution-Date: 20170329
+d 
+f s\stripplot.ado
+f s\stripplot.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/r
+N reghdfe.pkg
+D  2 Oct 2020
+U 10
+d 'REGHDFE': module to perform linear or instrumental-variable regression absorbing any number of high-dimensional fixed effects
+d 
+d  reghdfe fits a linear or instrumental-variable regression
+d absorbing an arbitrary number of categorical factors and
+d factorial interactions Optionally, it saves the estimated fixed
+d effects.
+d 
+d KW: regression
+d KW: instrumental variables
+d KW: fixed effects
+d KW: high dimension fixed effects
+d 
+d Requires: Stata version 11.2
+d 
+d Distribution-Date: 20191118
+d 
+d Author: Sergio Correia, Board of Governors of the Federal Reserve System
+d Support: email sergio.correia@@gmail.com
+d 
+f r\reghdfe.ado
+f r\reghdfe.mata
+f r\reghdfe_old.ado
+f r\reghdfe_p.ado
+f r\reghdfe_old_p.ado
+f r\reghdfe_estat.ado
+f r\reghdfe_parse.ado
+f r\reghdfe_footnote.ado
+f r\reghdfe_old_estat.ado
+f r\reghdfe_old_footnote.ado
+f e\estfe.ado
+f r\reghdfe_header.ado
+f r\reghdfe_store_alphas.ado
+f r\reghdfe.sthlp
+f r\reghdfe_old.sthlp
+f r\reghdfe_accelerations.mata
+f r\reghdfe_bipartite.mata
+f r\reghdfe_class.mata
+f r\reghdfe_common.mata
+f r\reghdfe_constructor.mata
+f r\reghdfe_lsmr.mata
+f r\reghdfe_projections.mata
+f r\reghdfe_transforms.mata
+f r\reghdfe_mata.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/f
+N ftools.pkg
+D  2 Oct 2020
+U 11
+d 'FTOOLS': module to provide alternatives to common Stata commands optimized for large datasets
+d 
+d  ftools consists of a Mata file and several Stata commands: The
+d Mata file creates identifiers (factors) from variables by using
+d hash functions instead of sorting the data, so it runs in time
+d O(N) and not in O(N log N). The Stata commands exploit this to
+d avoid sort operations,  at the cost of being slower for small
+d datasets (mainly because of the cost involved in moving data from
+d Stata to Mata). Implemented commands are fcollapse, fegen group,
+d and fsort. Note that most of the capabilities of levels and
+d contract are already supported by these commands. Possible
+d commands include more egen functions and merge and reshape
+d alternatives.
+d 
+d KW: levels
+d KW: collapse
+d KW: contract
+d KW: egen
+d KW: sort
+d KW: factor variables
+d KW: Mata
+d 
+d Requires: Stata version 11.2
+d 
+d Distribution-Date: 20191118
+d 
+d Author: Sergio Correia, Board of Governors of the Federal Reserve System
+d Support: email sergio.correia@@gmail.com
+d 
+f f\ftools.ado
+f f\ftools.mata
+f f\ftools.sthlp
+f f\fcollapse.ado
+f f\fcollapse.sthlp
+f f\fegen.ado
+f f\fegen_group.ado
+f f\fegen.sthlp
+f f\fisid.ado
+f f\fisid.sthlp
+f f\flevelsof.ado
+f f\flevelsof.sthlp
+f f\fmerge.ado
+f f\fmerge.sthlp
+f f\freshape.ado
+f f\fsort.ado
+f f\fsort.sthlp
+f f\ftab.ado
+f j\join.ado
+f j\join.sthlp
+f l\local_inlist.ado
+f l\local_inlist.sthlp
+f f\fcollapse_functions.mata
+f f\fcollapse_main.mata
+f f\ftools_type_aliases.mata
+f f\ftools.mata
+f f\ftools_common.mata
+f f\ftools_hash1.mata
+f f\ftools_main.mata
+f f\ftools_experimental.mata
+f f\ftools_plugin.mata
+f f\ftools_type_aliases.mata
+f m\ms_compile_mata.ado
+f m\ms_expand_varlist.ado
+f m\ms_fvstrip.ado
+f m\ms_fvstrip.sthlp
+f m\ms_fvunab.ado
+f m\ms_get_version.ado
+f m\ms_parse_absvars.ado
+f m\ms_parse_varlist.ado
+f m\ms_parse_vce.ado
+f m\ms_add_comma.ado
+e
+S http://www.stata-journal.com/software/sj20-1
+N st0594.pkg
+D 10 Nov 2020
+U 12
+d SJ20-1 st0594. Program for lasso, square-root lasso ...
+d Program for lasso, square-root lasso, elastic
+d   net, ridge, adaptive lasso, and
+d   postestimation ordinary least squares
+d by Achim Ahrens, Public Policy Group, ETH
+d      Zurich, Zurich, Switzerland
+d    Christian B. Hansen, University of Chicago,
+d      Chicago, IL
+d    Mark E. Schaffer, Heriot-Watt University,
+d      Edinburgh, UK
+d Support:  achim.ahrens@gess.ethz.ch,
+d           christian.hansen@chicagobooth.edu,
+d           m.e.schaffer@hw.ac.uk
+d After installation, type help {cmd:lassopack},
+d   {cmd:lasso2}, {cmd:cvlasso}, {cmd:rlasso},
+d   and {cmd:lassologit}
+d DOI:  10.1177/1536867X20909697
+f l\lassologit.sthlp
+f r\rlassologit.ado
+f l\lasso2.ado
+f r\rlassologit.sthlp
+f c\cvlasso.ado
+f l\lasso2_p.ado
+f l\lassopack.sthlp
+f r\rlasso_p.ado
+f c\cvlassologit.ado
+f l\lasso2.sthlp
+f l\lassoutils.ado
+f r\rlasso.sthlp
+f c\cvlassologit.sthlp
+f l\lassologit.ado
+f c\cvlasso.sthlp
+f l\lassologit_p.ado
+f r\rlasso.ado
+e
+S http://fmwww.bc.edu/repec/bocode/p
+N pdslasso.pkg
+D 10 Nov 2020
+U 13
+d 'PDSLASSO': module for post-selection and post-regularization OLS or IV estimation and inference
+d 
+d  pdslasso and ivlasso are routines for estimating structural
+d parameters in linear models with many controls and/or
+d instruments. The routines use methods for estimating sparse
+d high-dimensional models, specifically the lasso (Least Absolute
+d Shrinkage and Selection Operator, Tibshirani 1996) and the
+d square-root-lasso (Belloni et al. 2011, 2014). These estimators
+d are used to select controls (pdslasso) and/or instruments
+d (ivlasso) from a large set of variables (possibly numbering more
+d than the number of observations), in a setting where the
+d researcher is interested in estimating the causal impact of one
+d or more (possibly endogenous) causal variables of interest. Two
+d approaches are implemented in pdslasso and ivlasso: (1) The
+d "post-double-selection" (PDS) methodology of Belloni et al.
+d (2012, 2013, 2014, 2015, 2016). (2) The "post-regularization"
+d (CHS) methodology of Chernozhukov, Hansen and Spindler (2015).
+d For instrumental variable estimation, ivlasso implements
+d weak-identification-robust hypothesis tests and confidence sets
+d using the Chernozhukov et al. (2013) sup-score test. The
+d implemention of these methods in pdslasso and ivlasso require the
+d Stata program rlasso (available in the separate Stata module
+d lassopack), which provides lasso and square root-lasso estimation
+d with data-driven penalization.
+d 
+d KW: lasso
+d KW: causal inference
+d KW: high-dimensional models
+d KW: instrumental variables
+d KW: square-root lasso
+d KW: regularization
+d KW: penalization
+d KW: sparsity
+d KW: post-double-selection
+d KW: post-regularization
+d 
+d Requires: Stata version 13.1 and lassopack, ranktest from SSC (q.v.)
+d 
+d Distribution-Date: 20190124
+d 
+d Author: Achim Ahrens, Economic and Social Research Institute, Republic of Ireland
+d Support: email achim.ahrens@@esri.ie
+d 
+d Author: Christian B. Hansen, University of Chicago
+d Support: email Christian.Hansen@@chicagobooth.edu
+d 
+d Author: Mark E Schaffer, Heriot-Watt University
+d Support: email m.e.schaffer@@hw.ac.uk
+d 
+f p\pdslasso.ado
+f p\pdslasso.sthlp
+f i\ivlasso.ado
+f i\ivlasso_p.ado
+f i\ivlasso.sthlp
+f i\ivlasso.ihlp
+e
+S http://fmwww.bc.edu/repec/bocode/s
+N synth.pkg
+D  3 Mar 2021
+U 14
+d 'SYNTH': module to implement Synthetic Control Methods for Comparative Case Studies
+d 
+d  synth implements the synthetic control method for causal
+d inference in comparative case studies as described in "Synthetic
+d Control Methods for Comparative Case Studies of Aggregate
+d Interventions:  Estimating the Effect of California's Tobacco
+d Control Programm.  Journal of the American Statistical
+d Association. 105(490): 493-505, 2010.
+d 
+d KW: synthetic control
+d KW: causal inference
+d KW: comparative case studies
+d 
+d Requires: Stata version 9.2
+d 
+d Distribution-Date: 20200509
+d 
+d Author: Alberto Abadie, MIT
+d Support: email abadie@mit.edu
+d 
+d Author: Alexis Diamond, IFC
+d Support: email adiamond@@fas.harvard.edu
+d 
+d Author: Jens Hainmueller, Stanford University
+d Support: email  jhain@@stanford.edu
+d 
+f s\synth.ado
+f s\synth_ll.ado
+f s\synth.sthlp
+f l\lsynth_mata_subr.mlib
+f s\synthopt.plugin
+f s\synthopt.plugin
+e
+S http://fmwww.bc.edu/RePEc/bocode/c
+N catplot.pkg
+D  6 Apr 2021
+U 16
+d 'CATPLOT': module for plots of frequencies, fractions or percents of categorical data
+d 
+d catplot shows frequencies (or optionally fractions or percents)
+d of the categories of one, two or three categorical variables. The
+d first named variable is innermost on the display; that is, its
+d categories vary fastest. catplot is a wrapper for graph hbar
+d (default) or graph bar or graph dot. The files catplot_old.* are
+d files for the original 2003 version of catplot: to use fix the
+d names by removing "_old".
+d 
+d KW: graphics
+d KW: categorical data
+d KW: bar charts
+d KW: dot charts
+d 
+d Requires: Stata version 8.0
+d 
+d 
+d Author: Nicholas J. Cox, Durham University
+d Support: email  N.J.Cox@@durham.ac.uk
+d 
+d Distribution-Date: 20101221
+d 
+f c\catplot.ado
+f c\catplot.hlp
+f c\catplot_old.ado
+f c\catplot_old.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/s
+N shp2dta.pkg
+D  7 Apr 2021
+U 18
+d 'SHP2DTA': module to converts shape boundary files to Stata datasets
+d 
+d  shp2dta reads a shape (.shp) and dbase (.dbf) file from disk and
+d converts them into Stata datasets.  The shape and dbase files
+d must have the same name and be saved in the same directory.  The
+d user-written command tmap can use the two datasets that shp2dta
+d creates. shp2dta can convert only polygon shapefiles (type 5).
+d 
+d KW: tmap
+d KW: shape files
+d KW: maps
+d 
+d Requires: Stata version 9.1
+d 
+d Distribution-Date: 20150717
+d 
+d Author: Kevin Crow , StataCorp LP
+d Support: email kcrow@@stata.com
+d 
+f s\shp2dta.ado
+f s\shp2dta.hlp
+f s\shp2dta.dlg
+e
+S http://fmwww.bc.edu/repec/bocode/m
+N mif2dta.pkg
+D  7 Apr 2021
+U 19
+d 'MIF2DTA': module convert MapInfo Interchange Format boundary files to Stata boundary files
+d 
+d   This is a program that converts MapInfo Interchange
+d Format boundary files      into Stata boundary files to be used
+d with the latest release of the -tmap-      package.
+d 
+d KW: maps
+d KW: MapInfo
+d 
+d Requires: Stata version 9.2
+d 
+d Distribution-Date: 20080314
+d 
+d Author: Maurizio Pisati, University of Milano Bicocca - Italy
+d Support: email maurizio.pisati@@unimib.it
+d 
+f m\mif2dta.ado
+f m\mif2dta.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/m
+N mergepoly.pkg
+D  7 Apr 2021
+U 20
+d 'MERGEPOLY': module to merge adjacent polygons from a shapefile
+d 
+d  mergepoly inputs a shapefile in the dual Stata dataset format
+d generated by -shp2dta- (SSC) and merges adjacent polygons by
+d removing all shared line segments and reconnecting the remaining
+d line segments into polygons that follow the outer borders of the
+d original polygons. The -by()- option can be used to merge
+d features by attribute groups. You can, for example, merge U.S.
+d State boundaries by Census division codes and create a new
+d shapefile that describes the division boundaries. The shapefile
+d produced by mergepoly is in a format that can be immediately
+d visualized using -spmap- (SSC).
+d 
+d KW:  data management
+d KW: shapefiles
+d KW: GIS
+d KW: polygons
+d KW: shp2dta
+d KW: spmap
+d 
+d Requires: Stata version 9.2
+d 
+d Distribution-Date: 20150816
+d 
+d Author: Robert Picard
+d Support: email picard@@netbox.com
+d 
+d Author: Michael Stepner
+d Support: email michaelstepner@@gmail.com
+d 
+f m\mergepoly.ado
+f m\mergepoly.hlp
+e
+S http://www.stata-journal.com/software/sj8-2
+N gr0034.pkg
+D 14 Apr 2021
+U 21
+d SJ8-2 gr0034.  Assign values to variables
+d Assign values to variables
+d by Nicholas J. Cox, Durham University, Durham City, UK
+d Support:  n.j.cox@@durham.ac.uk
+d After installation, type help ^labmask^ and ^seqvar^
+f l\labmask.ado
+f l\labmask.hlp
+f s\seqvar.ado
+f s\seqvar.hlp
+e
+S http://www.stata-journal.com/software/sj17-4
+N st0500.pkg
+D 27 Apr 2021
+U 22
+d SJ17-4 st0500. Automation for multiple synthetic...
+d Automation for multiple synthetic control
+d   estimations
+d by Sebastian Galiani, University of Maryland,
+d      College Park, MD
+d    Brian Quistorff, Microsoft AI and Research,
+d      Redmond, WA
+d Support:  galiani@econ.umd.edu,
+d           Brian.Quistorff@microsoft.com
+d After installation, type help {cmd:effect_graphs},
+d   {cmd:pval_graphs}, {cmd:single_treatment_graphs}, and
+d   {cmd:synth_runner}
+f c\calc_rmspe.ado
+f e\effect_graphs.ado
+f p\pval_graphs.ado
+f s\single_treatment_graphs.ado
+f _\_sr_add_keepfile_to_agg.ado
+f _\_sr_do_work_do.ado
+f _\_sr_do_work_tr.ado
+f _\_sr_gen_time_locals.ado
+f _\_sr_get_returns.ado
+f _\_sr_print_dots.ado
+f s\synth_runner.ado
+f s\synth_wrapper.ado
+f e\effect_graphs.sthlp
+f p\pval_graphs.sthlp
+f s\single_treatment_graphs.sthlp
+f s\synth_runner.sthlp
+e
+S http://www.stata-journal.com/software/sj12-4
+N st0159_1.pkg
+D 18 May 2021
+U 23
+d SJ12-4 st0159_1. Update: 'XTABOND2': module to...
+d Update: 'XTABOND2': module to extend xtabond
+d   dynamic panel data estimator
+d by David Roodman, Center for Global Development
+d Support:  DRoodman@@CGDEV.ORG
+d After installation, type help ^xtabond2^ and
+d   ^abar^
+f x\xtabond2.ado
+f x\xtabond2.mata
+f x\xtabond2.hlp
+f x\xtab2_p.ado
+f l\lxtabond2.mlib
+f a\abar.hlp
+f a\abar.ado
+e
+S http://fmwww.bc.edu/repec/bocode/x
+N xtabond2.pkg
+D 18 May 2021
+U 24
+d 'XTABOND2': module to extend xtabond dynamic panel data estimator
+d 
+d      xtabond2 can fit two closely related dynamic panel data
+d models. The first is the    Arellano-Bond (1991) estimator, which
+d is also available with xtabond without the two-step
+d finite-sample correction described below.  The second is an
+d augmented version outlined in    Arellano and Bover (1995) and
+d fully developed in Blundell and Bond (1998).   Arellano and Bond
+d (1991) developed a Generalized Method of    Moments estimator
+d that treats the model as a system of equations, one for each time
+d period.    The equations differ only in their instrument/moment
+d condition sets.  The predetermined and    endogenous variables in
+d first differences are instrumented with suitable lags of their
+d own  levels.  Strictly exogenous regressors, as well as any
+d other instruments, can enter the    instrument matrix in the
+d conventional instrumental variables fashion: in first
+d differences,   with one column per instrument.    A problem with
+d the original Arellano-Bond estimator is that lagged levels are
+d often poor instruments for first differences, especially for
+d variables that are close to a random   walk.  Arellano and Bover
+d (1995) described how, if the original equations in levels were
+d added to the system, additional moment conditions could be
+d brought to bear to increase  efficiency.  In these equations,
+d predetermined and endogenous variables in levels are
+d instrumented with suitable lags of their own first differences.
+d Blundell and Bond (1998)    articulated the necessary assumptions
+d for this augmented estimator more precisely and    tested it with
+d Monte Carlo simulations.  The original estimator is sometimes
+d called    "difference GMM," and the augmented one, "system GMM."
+d Bond (2002) is a good introduction to these estimators and
+d their use. xtabond2 implements both estimators.   As GMM
+d estimators, the Arellano-Bond estimators have one- and two-step
+d variants.  But    though asymptotically more efficient, the
+d two-step estimates of the standard errors tend to    be severely
+d downward biased (Arellano and Bond 1991; Blundell and Bond 1998).
+d  To  compensate, xtabond2, unlike xtabond, makes available a
+d finite-sample correction to the    two-step covariance matrix
+d derived by Windmeijer (2000).  This can make twostep robust more
+d   efficient than onestep robust, especially for system GMM.
+d Note: the routine requires an up-to-date version of Stata 7 (with
+d the 21jun2002 update installed).     Users of Stata version 10
+d (25feb2008 update) or later can take advantage of speed
+d improvements due to Mata.
+d 
+d KW: Arellano-Bond
+d KW: dynamic panel data
+d KW: Blundell-Bond
+d KW: Arellano-Bover
+d KW: Windmeijer
+d 
+d Requires: Stata version 7.0 (with 21jun2002 update); version 9.0 for Mata version
+d 
+d Distribution-Date: 20201123
+d 
+d Author: David Roodman
+d Support: email david@@davidroodman.com
+d 
+f x\xtabond2.ado
+f x\xtabond2.mata
+f x\xtabond2.hlp
+f x\xtab2_p.ado
+f l\lxtabond2.mlib
+e
+S https://stats.idre.ucla.edu/stat/stata/ado/analysis
+N meansdplot.pkg
+D  9 Jun 2021
+U 25
+d meansdplot.  Plot mean and stendard deviation for multiple groups.
+d Philip B. Ender
+d Statistical Computing and Consulting
+d UCLA Academic Technology Services
+d ender@@ucla.edu
+d 
+d Stata ado and hlp files in the package
+d distribution-date: 20150507
+f m\meansdplot.ado
+f m\meansdplot.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/a
+N aaplot.pkg
+D 21 Jun 2021
+U 26
+d 'AAPLOT': module for scatter plot with linear and/or quadratic fit, automatically annotated
+d 
+d  aaplot graphs a scatter plot for yvar versus xvar with linear
+d and/or quadratic fit superimposed.  The equation(s) and R-square
+d statistics of the fits shown are also shown at the top of the
+d graph. If just one fit is shown, the subtitle is used. The sample
+d size and RMSE(s) are shown in a note.
+d 
+d KW: regression
+d KW: scatter plot
+d KW: quadratic fit
+d 
+d Requires: Stata version 11
+d 
+d Distribution-Date: 20151205
+d 
+d Author: Nicholas J. Cox, Durham University
+d Support: email N.J.Cox@@durham.ac.uk
+d 
+f a\aaplot.ado
+f a\aaplot.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/s
+N sepscatter.pkg
+D 22 Jun 2021
+U 27
+d 'SEPSCATTER': module to draw scatter (or other twoway) plots separated by a third variable
+d 
+d  sepscatter produces a scatter or other twoway plot for yvar
+d versus xvar. Points, or as recast lines, are portrayed separately
+d according to the distinct values of a third variable.
+d 
+d KW:  graphics
+d KW: scatter plots
+d KW: line plots
+d 
+d Requires: Stata version 9
+d 
+d Distribution-Date: 20181226
+d 
+d Author: Nicholas J. Cox, Durham University
+d Support: email N.J.Cox@@durham.ac.uk
+d 
+f s\sepscatter.ado
+f s\sepscatter.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/b
+N binscatter.pkg
+D 26 Aug 2021
+U 30
+d 'BINSCATTER': module to generate binned scatterplots
+d 
+d  binscatter generates binned scatterplots, and is optimized for
+d speed in large  datasets.  Binned scatterplots provide a
+d non-parametric way of visualizing the relationship between two
+d variables.  With a large number of observations, a scatterplot
+d that plots every data point would become too crowded to interpret
+d visually.  binscatter groups the x-axis variable into equal-sized
+d bins, computes the mean of the x-axis and y-axis variables within
+d each bin, then creates a scatterplot of these data points.  It
+d provides built-in options to control for covariates before
+d plotting the relationship.  It will also plot fit lines based on
+d the underlying data, and can automatically handle regression
+d discontinuities.
+d 
+d KW: scatterplot
+d KW: data description
+d KW: regression discontinuity
+d 
+d Requires: Stata version 12.1
+d 
+d Distribution-Date: 20131124
+d 
+d Author: Michael Stepner
+d Support: email michaelstepner@@gmail.com
+d 
+f b\binscatter.ado
+f b\binscatter.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/f
+N fabplot.pkg
+D 26 Aug 2021
+U 31
+d 'FABPLOT': module for plots for each subset with rest of the data as backdrop
+d 
+d  fabplot produces an array of scatter or other twoway plots  for
+d yvar versus xvar according to a further variable byvar.   There
+d is one plot for observations for each distinct subset of  byvar
+d in which data for that subset are highlighted and the rest  of
+d the data shown as backdrop.
+d 
+d KW:  graphics
+d KW: scatter
+d KW: line
+d KW: small multiples
+d KW: trellis
+d 
+d Requires: Stata version 9
+d 
+d Distribution-Date: 20210512
+d 
+d Author: Nicholas J. Cox, Durham University
+d Support: email N.J.Cox@@durham.ac.uk
+d 
+f f\fabplot.ado
+f f\fabplot.sthlp
+e
+S http://www.stata-journal.com/software/sj17-3
+N gr0070.pkg
+D  2 Sep 2021
+U 34
+d SJ17-3 gr0070. Provide graph schemes sensitive to color vision deficiency
+d Provide graph schemes sensitive to color vision
+d   deficiency
+d by Daniel Bischof, Department of Political
+d      Science, University of Zurich, Zurich,
+d      Switzerland
+d Support:  bischof@@ipz.uzh.ch
+d After installation, type help ^plotplain^,
+d   ^plotplainblind^, ^plottig^, and
+d   ^plottigblind^
+f style\color-ananas.style
+f style\color-orangebrown.style
+f style\color-plb1.style
+f style\color-plb2.style
+f style\color-plb3.style
+f style\color-plg1.style
+f style\color-plg2.style
+f style\color-plg3.style
+f style\color-pll1.style
+f style\color-pll2.style
+f style\color-pll3.style
+f style\color-plr1.style
+f style\color-plr2.style
+f style\color-ply1.style
+f style\color-ply2.style
+f style\color-ply3.style
+f style\color-reddish.style
+f style\color-sea.style
+f style\color-sky.style
+f style\color-turquoise.style
+f style\color-vermillion.style
+f s\scheme-plotplainblind.scheme
+f s\scheme_plotplainblind.sthlp
+f s\scheme-plotplain.scheme
+f s\scheme_plotplain.sthlp
+f s\scheme-plottigblind.scheme
+f s\scheme_plottigblind.sthlp
+f s\scheme-plottig.scheme
+f s\scheme_plottig.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/p
+N palettes.pkg
+D  2 Sep 2021
+U 36
+d 'PALETTES': module to provide color palettes, symbol palettes, and line pattern palettes
+d 
+d  The palettes module contains three commands: colorpalette,
+d symbolpalette, and linepalette. The commands provide color,
+d symbol, and line pattern palettes for use in Stata graphs.
+d 
+d KW: graphics
+d KW: colors
+d KW: marker symbols
+d KW: line patterns
+d 
+d Requires: Stata version 14.2 and colrspace from SSC (q.v.); (version 9.2 for colorpalette9)
+d 
+d Distribution-Date: 20200527
+d 
+d Author: Ben Jann, University of Bern
+d Support: email jann@@soz.unibe.ch
+d 
+f p\palettes.hlp
+f c\colorpalette.ado
+f c\colorpalette.sthlp
+f c\colorpalette9.ado
+f c\colorpalette9.hlp
+f l\linepalette.ado
+f l\linepalette.hlp
+f s\symbolpalette.ado
+f s\symbolpalette.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/c
+N colrspace.pkg
+D  2 Sep 2021
+U 37
+d 'COLRSPACE': module providing a class-based color management system in Mata
+d 
+d   The colrspace module provides a class-based color management
+d system implemented in Mata. It supports a wide variety of color
+d spaces and translations among them, provides color generators and
+d a large collection of named palettes, and features functionality
+d such as color interpolation, grayscale conversion, or color
+d vision deficiency simulation.
+d 
+d KW: graphics
+d KW: color management
+d 
+d Requires: Stata version 14.2
+d 
+d Distribution-Date: 20200606
+d 
+d Author: Ben Jann, University of Bern
+d Support: email jann@@soz.unibe.ch
+d 
+f c\colrspace.sthlp
+f c\colrspace_source.sthlp
+f c\colrspace_library_generators.sthlp
+f c\colrspace_library_matplotlib.sthlp
+f c\colrspace_library_namedcolors.sthlp
+f c\colrspace_library_palettes.sthlp
+f l\lcolrspace.mlib
+e
+S http://fmwww.bc.edu/repec/bocode/p
+N psmatch2.pkg
+D 18 Nov 2021
+U 38
+d 'PSMATCH2': module to perform full Mahalanobis and propensity score matching, common support graphing, and covariate imbalance testing
+d 
+d psmatch2 implements full Mahalanobis and propensity score
+d matching, common support graphing, and covariate imbalance
+d testing. This routine supersedes the previous 'psmatch' routine
+d of B. Sianesi. The April 2012 revision of pstest changes the
+d syntax of that command.
+d 
+d KW: propensity score
+d KW: matching
+d KW: treatment
+d 
+d Requires: Stata version 11
+d 
+d 
+d Author: Edwin Leuven, Ecole Nationale de la Statistique et Administration Economique (ENSAE)
+d Support: email edwin.leuven@@ensae.fr
+d 
+d Author: Barbara Sianesi, Institute for Fiscal Studies
+d Support: email barbara_s@@ifs.org.uk
+d 
+d Distribution-Date: 20180201
+d 
+f p\psmatch2.ado
+f p\psmatch2.sthlp
+f p\psmatch2.dlg
+f p\pstest.ado
+f p\pstest2.ado
+f p\pstest.sthlp
+f d\density2.ado
+f p\psgraph.ado
+f p\psgraph.sthlp
+e
+S https://justinwiltshire.com/s
+N allsynth.pkg
+D 24 Nov 2021
+U 39
+d allsynth. Synthetic Control Bias-Correction Utilities for Stata
+d {bf:Justin C. Wiltshire, Dept. of Economics, University of California, Davis}
+d 
+d allsynth adds functionality to the {bf:synth} package created
+d by Abadie, Diamond, and Hainmueller (2010)
+d 
+d Enables: estimation of bias-corrected gaps/"treatment effects";
+d calculation of RMSPE p-values from in-space placebo runs;
+d greatly expanded graphing; and additional functionality.
+d 
+d After installation see help {bf:allsynth}.
+d 
+d Beta version 0.0.8
+d Distribution date: 08/15/2021
+d 
+d Support and bug reporting: jcwiltshire@ucdavis.edu
+f a\allsynth.ado
+f a\allsynth.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/n
+N nnmatch.pkg
+D  2 Dec 2021
+U 40
+d 'NNMATCH': module to compute nearest-neighbor bias-corrected estimators
+d 
+d nnmatch estimates the average treatment effect on depvar  by
+d comparing outcomes between treated and control observations (as
+d defined by treatvar),  using nearest neighbor matching across the
+d variables defined in varlist_nnmatch.  nnmatch can estimate
+d either the treatment effect for the treated observations,  for
+d the controls, or for the sample as a whole. The program pairs
+d observations to the closest m matches in the opposite treatment
+d group  to provide an estimate of the counterfactual treatment
+d outcome.  The program allows for matching over a
+d multi-dimensional set of variables (varlist_nnmatch), giving
+d options  for the weighting matrix to be used in determining the
+d optimal matches.  It also allows exact matching (or as close as
+d possible) on a subset of variables. In addition, the program
+d allows for bias correction of the treatment effect, and
+d estimation of either the sample or population variance, with or
+d without assuming a constant treatment effect (homoskedasticity).
+d Finally it allows observations to be used as a match more than
+d once, thus making the order of  matching irrelevant.
+d 
+d KW: treatment effects
+d KW: matching
+d KW: bias-corrected estimator
+d 
+d Requires: Stata version 8.0
+d 
+d Distribution-Date: 20040610
+d 
+d Author: Alberto Abadie, Stata Corporation
+d Support: email ddrukker@@stata.com
+d 
+d Author: Jane Leber Herr
+d Support: email
+d 
+d Author: Guido W. Imbens
+d Support: email
+d 
+d Author: David M. Drukker
+d Support: email
+d 
+f n\nnmatch.ado
+f n\nnmatch.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/o
+N outreg.pkg
+D  8 Dec 2021
+U 41
+d 'OUTREG': module to write estimation tables to a Word or TeX file
+d 
+d outreg arranges the results of Stata estimation commands in
+d tables as they are typically presented in journal articles,
+d rather than as they are presented in the Stata Results window. By
+d default, t statistics appear in parentheses below the
+d coefficient estimates with asterisks for significance levels.
+d outreg provides as complete control of the statistics,  layout,
+d and formatting of estimation tables as possible, both  in Word
+d and TeX files.  Almost every aspect of the table's  structure and
+d format (including fonts and Greek letters) can  be specified with
+d options.  Multiple tables can be written to  the same document,
+d with paragraphs of text in between,  creating a whole statistical
+d appendix.  outreg works after any estimation command in Stata.
+d Successive estimation results, with different variables, can be
+d merged into a single table.  In addition to writing a  Microsoft
+d Word or a TeX file, the reformatted table is displayed in the
+d Results window.  This is a complete rewrite of earlier versions
+d of outreg.
+d 
+d KW: estimates
+d KW: table
+d KW: formatting
+d KW: Microsoft Word
+d KW: LaTeX
+d 
+d Requires: Stata version 10.1
+d 
+d 
+d Author: John Luke Gallup, Portland State University
+d Support: email jlgallup@@pdx.edu
+d 
+d Distribution-Date: 20150918
+d 
+f o\outreg.ado
+f o\outreg.sthlp
+f f\frmttable.ado
+f f\frmttable.sthlp
+f f\frmt_opts.sthlp
+f o\outreg_complete.sthlp
+f o\outreg_update.sthlp
+f g\greek_in_word.sthlp
+f l\l_cfrmt.mlib
+e
+S http://fmwww.bc.edu/RePEc/bocode/r
+N relogit.pkg
+D 10 Dec 2021
+U 42
+d 'RELOGIT': module to perform Rare Event Logistic Regression
+d 
+d  relogit is a suite of programs for estimating and interpreting
+d  logit results when the sample is unbalanced (one outcome is
+d rarer    than the other) or has been selected by a rule
+d correlated with the  dependent variable.  RELOGIT estimates the
+d same logit model as the    logit command, but with an estimator
+d that give lower mean square  error in the presence of rare
+d events data for coefficients,    probabilities, and other
+d quantities of interest.
+d 
+d KW: logit
+d KW: logistic regression
+d 
+d Requires: Stata version 6
+d 
+d Distribution-Date: 20210420
+d 
+d Author: Michael Tomz, Harvard University
+d Support: email tomz@@fas.harvard.edu
+d 
+d Author:  Gary King, Harvard University
+d Support: email king@@harvard.edu
+d 
+d Author:  Langche Zeng, Harvard University
+d Support: email langche@@everest.fas.harvard.edu
+d 
+f r\relogit.ado
+f r\relogit.sthlp
+f r\relogitq.ado
+f r\relogitq.sthlp
+f s\setx.ado
+f s\setxhl.ado
+f s\setx.sthlp
+e
+S http://fmwww.bc.edu/RePEc/bocode/f
+N firthlogit.pkg
+D 10 Dec 2021
+U 43
+d 'FIRTHLOGIT': module to calculate bias reduction in logistic regression
+d 
+d  The module implements a penalized maximum likelihood estimation
+d method proposed by  David Firth (University of Warwick) for
+d reducing bias in generalized linear models. In this module, the
+d method is applied to logistic regression.  Others, notably Georg
+d Heinze and his colleagues (Medical University of Vienna), have
+d advocated the method for  use under conditions of complete and
+d quasi-complete separation, in which conventional  maximum
+d likelihood fails in obtaining finite estimates.
+d 
+d KW: Penalized maximum likelihood
+d KW: logistic regression
+d KW: Firth
+d 
+d Requires: Stata version 13.1
+d 
+d Distribution-Date: 20210425
+d 
+d Author: Joseph Coveney, Cobridge Co., Ltd.
+d Support: email jcoveney@@bigplanet.com
+d 
+f f\firthlogit.ado
+f f\firthlogit_ll.ado
+f f\firthlogit.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/c
+N cutpt.pkg
+D 13 Dec 2021
+U 44
+d 'CUTPT': module for empirical estimation of cutpoint for a diagnostic test
+d 
+d  cutpt estimates the optimal cutpoint for a diagnostic test.
+d Three methods of cutpoint estimation are supported: the Liu
+d method maximises the product of the sensitivity and specificity;
+d the Youden method maximises the sum; and the nearest to (0,1)
+d method finds the cutpoint on the ROC curve closest to (0,1) (the
+d point with perfect sensitivity and specificity). Results can be
+d bootstrapped to estimate confidence intervals.
+d 
+d KW: diagnostic test
+d KW: cut point
+d KW: sensitivity
+d KW: specificity
+d KW: ROC
+d 
+d Requires: Stata version 12.1
+d 
+d Distribution-Date: 20131016
+d 
+d Author: Phil Clayton, ANZDATA Registry, Australia
+d Support: email Phil@@anzdata.org.au
+d 
+f c\cutpt.ado
+f c\cutpt.sthlp
+e
+S http://fmwww.bc.edu/RePEc/bocode/x
+N xtivreg2.pkg
+D 11 Jan 2022
+U 45
+d 'XTIVREG2': module to perform extended IV/2SLS, GMM and AC/HAC, LIML and k-class regression for panel data models
+d 
+d  xtivreg2 implements IV/GMM estimation of the fixed-effects and
+d first-differences panel data models with possibly endogenous
+d regressors.  It is essentially a wrapper for ivreg2, which must
+d be installed for xtivreg2 to run: ssc install ivreg2, replace).
+d xtivreg2 supports all the estimation and reporting options of
+d ivreg2; see help ivreg2 for full descriptions and examples.  In
+d particular, all the statistics available with ivreg2
+d (heteroskedastic, cluster- and autocorrelation-robust covariance
+d matrix and standard errors, overidentification and orthogonality
+d tests, first-stage and weak/underidentification statistics, etc.)
+d are also supported by xtivreg2 and will be reported with any
+d degrees-of-freedom adjustments required for a panel data
+d estimation.
+d 
+d KW: instrumental variables
+d KW: panel data
+d KW: fixed effects
+d KW: first differences
+d KW: Sargan test
+d KW: robust estimation
+d KW: orthogonality
+d KW: GMM
+d KW: Hansen's J
+d KW: heteroskedastic OLS,
+d 
+d Requires: Stata version 8.2 and ivreg2, ranktest from SSC
+d 
+d Distribution-Date: 20200626
+d 
+d Author: Mark E Schaffer, Heriot-Watt University
+d Support: email m.e.schaffer@@hw.ac.uk
+d 
+f x\xtivreg2.ado
+f x\xtivreg2.hlp
+f x\xtivreg2_p.ado
+e
+S http://fmwww.bc.edu/repec/bocode/r
+N regsave.pkg
+D 14 Jan 2022
+U 46
+d 'REGSAVE': module to save regression results to a Stata-formatted dataset
+d 
+d  regsave fetches output from Stata's e() macros, scalars, and
+d matrices and stores them in  a Stata-formatted dataset. This
+d command provides a user-friendly way to manipulate a large number
+d  of regression results by allowing the user to apply Stata's data
+d manipulation commands to those  results. When combined with the
+d table option and the outsheet command, it also provides an easy
+d way to create tables that can be opened by, or copy and pasted
+d into, other programs such as MS Excel.
+d 
+d KW: regression
+d KW: output
+d KW: tables
+d KW: formatting
+d KW: outsheet
+d 
+d Requires: Stata version 8
+d 
+d Distribution-Date: 20200412
+d 
+d Author: Julian Reif , University of Illinois
+d Support: email jreif@@illinois.edu
+d 
+f r\regsave.ado
+f r\regsave_tbl.ado
+f r\regsave.hlp
+f r\regsave_tbl.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/a
+N asrol.pkg
+D 20 Jan 2022
+U 47
+d 'ASROL': module to generate rolling window / groups descriptive statistics
+d 
+d  asrol calculates descriptive statistics in a user's defined
+d rolling-window or over a grouping variable. asrol can efficiently
+d handle all types of data structures such as data declared as time
+d series or panel data, undeclared data, or data with duplicate
+d values, missing values or data having time series gaps. asrol
+d uses efficient coding in the Mata language which makes this
+d version extremely fast as compared to its previous versions or
+d other available programs. The speed efficiency matters more in
+d large data sets.  While writing the source code of asrol, I took
+d utmost care in selecting the most efficient choices among
+d available options. Therefore, every line of code had to undergo
+d several tests to ensure accuracy and speed. In fact, there is a
+d long list of built-in routines which are meant for different data
+d structures. asrol intelligently identifies data structures and
+d applies the most relevant routine from its library. Hence, asrol
+d speed efficiency is ensured whether the data is rectangular
+d (balanced panel), non-rectangular, has duplicates, has missing
+d values, or has both duplicates and missing values.
+d 
+d KW: rolling window statistics
+d KW: moving window statistics
+d KW: sliding window statistics
+d KW: by-group statistics
+d KW: statistics excluding focal observation
+d KW: fast rolling window calculations
+d 
+d Requires: Stata version 13
+d 
+d Distribution-Date: 20211208
+d 
+d Author: Attaullah Shah, Institute of Management Sciences
+d Support: email attashah15@@hotmail.com
+d 
+f a\asrol.ado
+f a\asrol.sthlp
+f l\lasrol.mlib
+e
+S http://fmwww.bc.edu/repec/bocode/e
+N ewma.pkg
+D 29 Jan 2022
+U 48
+d 'EWMA': module to calculate exponentially weighted moving average
+d 
+d ewma calculates an exponentially weighted moving average of the
+d series named in the generate() option. This is kept in the
+d archive only for any users of Stata 5.0.  Users of Stata 6.0
+d upwards should instead install the egenmore package, including
+d the ewma( ) function, which requires and  respects a prior tsset,
+d and (e.g.) works properly for xt data.
+d 
+d Author: Nicholas J. Cox, University of Durham
+d Support: email N.J.Cox@@durham.ac.uk
+d 
+d Distribution-Date: 19980327
+f e\ewma.ado
+e
+S http://fmwww.bc.edu/repec/bocode/f
+N fillmissing.pkg
+D 22 Feb 2022
+U 49
+d 'FILLMISSING': module to fill missing values in numeric or string variables
+d 
+d   fillmissing program provides the convenience of filling missing
+d values in numeric or string variables with the variable's
+d previous value, forward value, first or last value, or with some
+d calculated values such as mean, median, minimum, maximum, etc. in
+d numeric variables. The program can work with or without the
+d bysort prefix. Specifically, if filling the missing values is
+d needed within a grouping variable, such as firms, years, etc, the
+d bysort prefix can be used.
+d 
+d KW: data management
+d KW: missing values
+d 
+d Requires: Stata version 11
+d 
+d Distribution-Date: 20200517
+d 
+d Author: Attaullah Shah, Institute of Management Sciences
+d Support: email attashah15@@hotmail.com
+d 
+f f\fillmissing.ado
+f f\fillmissing.sthlp
+e
+S http://fmwww.bc.edu/RePEc/bocode/d
+N did_imputation.pkg
+D  7 Mar 2022
+U 50
+d 'DID_IMPUTATION': module to perform treatment effect estimation and pre-trend testing in event studies
+d 
+d     did_imputation estimates the effects of a binary treatment
+d with staggered rollout    allowing for arbitrary heterogeneity
+d and dynamics of causal effects, using the    imputation estimator
+d of Borusyak, Jaravel, and Spiess  (2021). The benchmark case
+d is with panel data, in which each unit i that gets treated as of
+d   period Ei stays treated forever; some units may never be
+d treated. Other types of data   (e.g. repeated cross-sections)
+d and other designs (e.g. triple-diffs) are also allowed.
+d 
+d KW: treatment
+d KW: did
+d KW: panel data
+d 
+d Requires: Stata version 13
+d 
+d Distribution-Date: 20220305
+d 
+d Author: Kirill Borusyak ,  University College London
+d Support: email k.borusyak@@ucl.ac.uk
+d 
+f d\did_imputation.ado
+f d\did_imputation.sthlp
+e
+S http://fmwww.bc.edu/RePEc/bocode/e
+N event_plot.pkg
+D  7 Mar 2022
+U 51
+d 'EVENT_PLOT': module to plot the staggered-adoption diff-in-diff ("event study") estimates
+d 
+d  This routine plots the staggered-adoption diff-in-diff ("event
+d study") estimates: coefficients post treatment ("lags") and,
+d if available, pre-trend coefficients   ("leads") along with
+d confidence intervals (CIs).  This command is used once
+d estimates have been produced by the imputation estimator of
+d Borusyak et al. 2021 (did_imputation), other methods robust to
+d treatment effect    heterogeneity (did_multiplegt, csdid,
+d eventstudyinteract), and conventional event-study    OLS.
+d 
+d KW: treatment effects
+d KW: DiD
+d KW: event study
+d 
+d Requires: Stata version 13
+d 
+d Distribution-Date: 20210608
+d 
+d Author: Kirill Borusyak ,  University College London
+d Support: email k.borusyak@@ucl.ac.uk
+d 
+f e\event_plot.ado
+f e\event_plot.sthlp
+e
+S http://www.stata-journal.com/software/sj10-1
+N dm0045.pkg
+D  8 Sep 2022
+U 52
+d SJ10-1 dm0045.  Using the world developing indicators...
+d  Using the world developing indicators database for
+d    statistical analysis in Stata
+d by P. Wilner Jeanty
+d Support:  jeanty.1@@osu.edu
+d After installation, type help ^wdireshape^ and ^paverage^
+f w\wdireshape.ado
+f w\wdireshape.hlp
+f p\paverage.ado
+f p\paverage.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/c
+N carryforward.pkg
+D 14 Sep 2022
+U 53
+d 'CARRYFORWARD': module to carry forward previous observations
+d 
+d  carryforward will carry values forward from one observation to
+d the next, filling in missing values with the previous value. This
+d is not intended for imputing missing values; it is regarded as a
+d bad choice for missing-value imputation. The intent is, rather,
+d to fill in "holes", where a value should  naturally prevail from
+d one observation to the next. The holes may be artifacts of data
+d management operations such as merging.
+d 
+d KW: carryforward
+d KW: carry
+d KW: forward
+d KW: missing
+d KW: fill
+d KW: replace
+d KW: cascade
+d 
+d Requires: Stata version 8.2
+d 
+d Distribution-Date: 20160212
+d 
+d Author: David Kantor
+d Support: email  kantor.d@@att.net
+d 
+f c\carryforward.ado
+f c\carryforward.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/t
+N tsspell.pkg
+D 14 Sep 2022
+U 54
+d 'TSSPELL': module for identification of spells or runs in time series
+d 
+d  tsspell examines the data, which must be tsset time series, to
+d identify spells or runs, which are contiguous sequences defined
+d by some condition. tsspell generates new variables indicating
+d distinct spells, giving sequence in spell, and indicating whether
+d observations occur at the end of spells. If the data are panel
+d data, all operations are automatically performed separately
+d within panels.
+d 
+d KW: spells
+d KW: runs
+d KW: time series
+d KW: tsset
+d 
+d Requires: Stata version 7.0
+d 
+d Distribution-Date: 20211030
+d 
+d Author: Nicholas J. Cox, Durham University
+d Support: email N.J.Cox@@durham.ac.uk
+d 
+f t\tsspell.ado
+f t\tsspell.sthlp
+e
+S https://raw.githubusercontent.com/nppackages/scpi/master/stata
+N scpi.pkg
+D 27 Sep 2022
+U 55
+d STATA Package: SCPI
+d 
+d Authors: Matias D. Cattaneo, Princeton University, cattaneo@princeton.edu
+d          Yingjie Feng, Tsinghua University, fengyingjiepku@gmail.com
+d          Filippo Palomba, Princeton University, fpalomba@princeton.edu
+d          Rocio Titiunik, Princeton University, titiunik@princeton.edu
+d 
+d Date: 07-SEP-2022
+d Distribution-Date: 20220907
+d 
+f s\scdata.ado
+f s\scdata.sthlp
+f s\scdatamulti.ado
+f s\scdatamulti.sthlp
+f s\scest.ado
+f s\scest.sthlp
+f s\scpi.ado
+f s\scpi.sthlp
+f s\scplot.ado
+f s\scplot.sthlp
+f s\scplotmulti.ado
+f s\scplotmulti.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/w
+N winsor2.pkg
+D 12 Dec 2022
+U 58
+d 'WINSOR2': module to winsorize data
+d 
+d    winsor2 can winsorize a varlist, operate with the by prefix,
+d and offers a replace option.
+d 
+d KW: winsor
+d KW: winsorize
+d KW: data management
+d 
+d Requires: Stata version 8
+d 
+d Distribution-Date: 20201125
+d 
+d Author: Yujun Lian, Department of Finance, Sun Yat-Sen University, China
+d Support: email arlionn@@163.com
+d 
+f w\winsor2.ado
+f w\winsor2.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/t
+N texsave.pkg
+D 17 Dec 2022
+U 59
+d 'TEXSAVE': module to save a dataset in LaTeX format
+d 
+d  texsave saves the dataset currently in memory to a file in LaTeX
+d format. It includes macro code that can be read by Scientific
+d Word (SW) so that SW-specific features are available for your
+d table.
+d 
+d KW: data management
+d KW: text files
+d KW: LaTeX
+d 
+d Requires: Stata version 10
+d 
+d Distribution-Date: 20201129
+d 
+d Author: Julian Reif , University of Illinois
+d Support: email jreif@@illinois.edu
+d 
+f t\texsave.ado
+f t\texsave.sthlp
+f a\appendfile.ado
+f a\appendfile.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/a
+N adoedit.pkg
+D  8 May 2023
+U 60
+d 'ADOEDIT': module to edit ado file in Stata's do-file editor
+d 
+d adoedit attempts to edit whichever ado file named cmdname.ado is
+d first on the current adopath. If none exists, which cmdname is
+d invoked. One cannot edit  files larger than 32,000 bytes in the
+d do-file editor, nor can one edit built-in commands. This routine
+d is designed for use by those who are writing their own ado-files,
+d and should be used with caution on components of official Stata.
+d 
+d KW: ado-file
+d KW: edit
+d 
+d Requires: Stata version 8.0
+d 
+d 
+d Author: Dan Blanchette, The Carolina Population Center, UNC-CH
+d Support: email dan_blanchette@@unc.edu
+d 
+d Distribution-Date: 20120124
+d 
+f a\adoedit.ado
+f a\adoedit.hlp
+e
